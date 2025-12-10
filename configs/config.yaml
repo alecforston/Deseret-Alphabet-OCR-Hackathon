@@ -10,10 +10,7 @@ data:
   val_split: 0.1
 
 model:
-  # CNN parameters
   cnn_channels: [64, 128, 256, 512]
-  
-  # RNN parameters
   hidden_size: 256
   num_layers: 2
   bidirectional: true
