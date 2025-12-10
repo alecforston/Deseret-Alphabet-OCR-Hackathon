@@ -1,0 +1,43 @@
+data:
+  train_images: "data/train/images"
+  train_labels: "data/train/labels"
+  test_images: "data/test/images"
+  
+  target_height: 80
+  max_width: 1400
+  
+  train_split: 0.9
+  val_split: 0.1
+
+model:
+  # CNN parameters
+  cnn_channels: [64, 128, 256, 512]
+  
+  # RNN parameters
+  hidden_size: 256
+  num_layers: 2
+  bidirectional: true
+  dropout: 0.2
+  
+training:
+  batch_size: 16
+  num_workers: 4
+  learning_rate: 0.003
+  num_epochs: 100
+  early_stopping_patience: 25
+  
+  # Learning rate scheduler
+  use_scheduler: true
+  scheduler_factor: 0.6
+  scheduler_patience: 5
+  
+  # Gradient clipping
+  clip_grad_norm: 5.0
+
+paths:
+  model_save_dir: "models"
+  submission_dir: "submissions"
+  log_dir: "logs"
+
+device: "cuda"
+seed: 42
